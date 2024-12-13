@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Octa Invest Plans</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&family=Faculty+Glyphic&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=SUSE:wght@100..800&display=swap');
+
+        *{
+          font-family: "Open Sans", sans-serif;
+          font-optical-sizing: auto;
+          font-weight: 500;
+          font-style: normal;
+          font-size: 17px;
+          font-variation-settings:
+            "wdth" 100;
+        }
+</style>
+<body class="bg-gray-900 text-white">
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <div id="sidebar" style="z-index: 100;" class="bg-gray-800 w-64 h-fit p-4 fixed inset-y-0 left-0 transform -translate-x-full md:translate-x-0 transition duration-200 ease-in-out">
+            <h1 class="text-xl font-bold mb-6">Octa Invest</h1>
+            <div class="mb-4">
+                <p class="text-2xl capitalize py-5">Welcome, angolo!</p>
+            </div>
+            <nav>
+                <ul class="flex flex-col gap-5 pt-10">
+                    <li class="mb-2 pb-3 border-b-2 border-white"><a href="./usedash.php" class="flex items-center hover:text-gray-400"><i class="fas fa-tachometer-alt mr-2"></i> Dashboard</a></li>
+                    <li class="mb-2 pb-3 border-b-2 border-white"><a href="#" class="flex items-center hover:text-gray-400"><i class="fas fa-file-alt mr-2"></i> P/L record</a></li>
+                    <li class="mb-2 pb-3 border-b-2 border-white"><a href="./usertrac.php" class="flex items-center hover:text-gray-400"><i class="fas fa-history mr-2"></i> Transactions history</a></li>
+                    <li class="mb-2 pb-3 border-b-2 border-white"><a href="./funds.html" class="flex items-center hover:text-gray-400"><i class="fas fa-dollar-sign mr-2"></i> Deposit/Withdraw</a></li>
+                    <li class="mb-2 pb-3 border-b-2 border-white"><a href="./invplan.html" class="flex items-center hover:text-gray-400"><i class="fas fa-dollar-sign mr-2"></i> Investment Plans</a></li>
+                    <li class="mb-2 pb-3 border-b-2 border-white"><a href="./userref.php" class="flex items-center hover:text-gray-400"><i class="fas fa-link mr-2"></i> Referral Links</a></li>
+                    <li class="mb-2 pb-3 border-b-2 border-white"><a href="./accsettings.php" class="flex items-center hover:text-gray-400"><i class="fas fa-gear mr-2"></i> Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Overlay -->
+        <div id="overlay" class="fixed inset-0 bg-black opacity-50 hidden"></div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex-col p-6 md:ml-64">
+            <button id="hamburger" class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <h2 class="text-2xl font-bold mb-6">Choose Your Plan</h2>
+            <div class="w-full flex gap-6 pt-5">
+                <!-- Starter Plan -->
+                <div class="bg-gray-700 gap-4 flex flex-col items-center justify-center p-6 w-fit border border-white rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">Starter</h3>
+                    <p class="text-2xl mb-4">$5000</p>
+                    <p class="mb-2 pb-3 border-b-2 border-white">Minimum Possible Deposit: $5000</p>
+                    <p class="mb-2 pb-3 border-b-2 border-white">Maximum Possible Deposit: $5000</p>
+                    <p class="mb-2 pb-3 border-b-2 border-white">Minimum Return: $300</p>
+                    <p class="mb-2 pb-3 border-b-2 border-white">Maximum Return: $600</p>
+                    <p class="mb-4">Duration: One week</p>
+                    <button class="bg-blue-600 hover:bg-blue-500 text-white py-2 px-12 rounded-full w-[80%]">Join Plan</button>
+                </div>
+
+                <!-- VIP Plan -->
+                <div class="bg-gray-700 gap-4 flex flex-col items-center justify-center p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">VIP</h3>
+                    <p class="text-2xl mb-4">$1000</p>
+                    <p class="mb-2 pb-3 border-b-2 border-white">Minimum Possible Deposit: $200</p>
+                    <p class="mb-2 pb-3 border-b-2 border-white">Maximum Possible Deposit: $1000</p>
+                    <p class="mb-2 pb-3 border-b-2 border-white">Minimum Return: $600</p>
+                    <p class="mb-2 pb-3 border-b-2 border-white">Maximum Return: $1200</p>
+                    <p class="mb-4">Duration: One month</p>
+                    <button class="bg-blue-600 hover:bg-blue-500 text-white py-2 px-12 rounded-full w-[80%]">Join Plan</button>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
+        });
+    </script>
+
+</body>
+</html>
